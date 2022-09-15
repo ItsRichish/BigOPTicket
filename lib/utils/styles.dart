@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+// import 'package:hexcolor/hexcolor.dart';
 
-Color primary = const Color(0xff687daf);
+Color primary = const Color(0xff003d5b);
 
 class Styles {
   static Color primaryColor = primary;
   static Color textColor = const Color(0xff3b3b3b);
   static Color bgColor = const Color(0xffeeedf2);
-  static Color orangeColor = const Color(0xfff37b67);
+  static Color orangeColor = const Color(0xffd1495b);
   static Color khakiColor = const Color(0xffd2bdb6);
+  static Color greenColor = const Color(0xff1d7874);
 
   static TextStyle textStyle =
       TextStyle(fontSize: 16, color: textColor, fontWeight: FontWeight.w500);

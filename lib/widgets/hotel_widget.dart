@@ -4,7 +4,8 @@ import 'package:gap/gap.dart';
 import '../utils/styles.dart';
 
 class HotelWidget extends StatelessWidget {
-  const HotelWidget({Key? key}) : super(key: key);
+  final Map<String, dynamic> item;
+  const HotelWidget({Key? key, required this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class HotelWidget extends StatelessWidget {
       width: MediaQuery.of(context).size.width*0.6,
       height: 350,
       decoration: BoxDecoration(
-        color: Styles.primaryColor,
+        color: Styles.greenColor,
         borderRadius: BorderRadius.circular(25),
         boxShadow: [
           BoxShadow(
@@ -34,14 +35,14 @@ class HotelWidget extends StatelessWidget {
               color: Styles.primaryColor,
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage("assets/img/one.png")
+                image: AssetImage("assets/img/${item['image']}")
               )
             ),
           ),
           const Gap(15),
-          Text("Open Space", style: Styles.headlineStyle2.copyWith(color: Styles.khakiColor)),
-          Text("London",style: Styles.headlineStyle3.copyWith(color: Colors.white)),
-          Text("\$40/night", style: Styles.headlineStyle1.copyWith(color: Styles.khakiColor)),
+          Text(item['place'], style: Styles.headlineStyle2.copyWith(color: Styles.khakiColor)),
+          Text(item['destination'],style: Styles.headlineStyle3.copyWith(color: Colors.white)),
+          Text("Rs.${item['price']}/night", style: Styles.headlineStyle1.copyWith(color: Styles.khakiColor)),
         ],
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:booktickets/utils/app_info.dart';
 import 'package:booktickets/utils/styles.dart';
 import 'package:booktickets/widgets/hotel_widget.dart';
 import 'package:booktickets/widgets/ticket_view.dart';
@@ -91,10 +92,7 @@ class HomePage extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
             child: Row(
-              children: const [
-                TicketView(),
-                TicketView(),
-              ],
+              children: ticketItem.map((item) => TicketView(ticketItem: item)).toList(),
             ),
           ),
           const Gap(15),
@@ -120,12 +118,7 @@ class HomePage extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.only(left: 20),
             child: Row(
-              children: [
-                HotelWidget(),
-                HotelWidget(),
-                HotelWidget(),
-                HotelWidget(),
-              ],
+              children: itemList.map((singeItem) => HotelWidget(item: singeItem)).toList(),
             ),
           )
         ],
